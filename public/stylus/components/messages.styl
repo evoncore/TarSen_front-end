@@ -1,0 +1,74 @@
+
+.message-item
+  color #333
+  position relative
+  padding 15px
+  margin-top: 20px
+  background #333
+  color #fff
+  bs_pattern(#333)
+  .small-button
+    position absolute
+    display block
+    width 15px
+    height 15px
+    background #fff
+    color #fff
+    font-size 10px
+    text-align center
+    line-height 16px
+    font-family $if
+    transition()
+    bs_pattern(#fff)
+    &:hover
+      background $mc
+      bs_pattern($mc)
+    &:active
+      bs_pattern_negative($mc)
+    cursor pointer
+  .delete-item
+    top 5px
+    right 5px
+  h3
+    margin-top 0
+
+#addMessage
+  max-width 300px
+  margin-top 40px
+  input, textarea
+    background #ccc
+    color #222
+    transition()
+    bs_pattern(#ccc)
+    &::-webkit-input-placeholder
+      color #222
+      fonts(16px)
+    &::-moz-placeholder
+      color #222
+      fonts(16px)
+    &:-moz-placeholder
+      color #222
+      fonts(16px)
+    &:-ms-input-placeholder
+      color #222
+      fonts(16px)
+    &:focus
+      background $mc
+      bs_pattern($mc)
+  textarea
+    display block
+    border 0
+    padding 10px 15px
+    resize none
+    height 150px
+    width 100%
+    margin-top 20px
+    fonts(16px)
+  input
+    width 100%
+    display block
+    border 0
+    padding 10px 15px
+    padding-bottom 8px
+    margin-top 20px
+    fonts(16px)

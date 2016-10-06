@@ -14,10 +14,6 @@ class Messages extends React.Component {
     }
   }
 
-  componentWillMount() {
-    this.props.fetchMessages();
-  }
-
   handleName(e) {
     this.setState({
       messageName: e.target.value,
@@ -31,14 +27,22 @@ class Messages extends React.Component {
   }
 
   handleMessageSubmit() {
-    this.props.addMessage(
-      Date.now(),
-      this.state.messageName,
-      this.state.messageText
-    );
+    if (this.state.messageName !== '' && this.state.messageText !== '') {
+      this.props.addMessage(
+        Date.now(),
+        this.state.messageName,
+        this.state.messageText
+      );
+
+      this.setState({
+        messageName: '',
+        messageText: '',
+      });
+    }
   }
 
   removeMessage(e) {
+    e.preventDefault();
     this.props.removeMessage(e.target.closest('li').dataset.id);
   }
 
@@ -57,8 +61,15 @@ class Messages extends React.Component {
         }
         </ul>
         <div id="addMessage">
-          <input onChange={this.handleName.bind(this)} type="text" placeholder="Name" className="name" />
-          <textarea onChange={this.handleMessage.bind(this)} className="text" placeholder="Text ..."></textarea>
+          <input onChange={this.handleName.bind(this)}
+                 type="text"
+                 placeholder="Name"
+                 className="name"
+                 value={this.state.messageName} />
+          <textarea onChange={this.handleMessage.bind(this)} className="text"
+                                                             placeholder="Text ..."
+                                                             value={this.state.messageText}>
+          </textarea>
           <button onClick={this.handleMessageSubmit.bind(this)}>add new Message</button>
         </div>
       </div>

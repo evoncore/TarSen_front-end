@@ -4,9 +4,13 @@ class Message extends React.Component {
 
   render() {
     return (
-      <li onClick={this.props.onClick} ref="li" data-id={this.props.id}>
+      <li className="message-item"
+          data-id={this.props.id}>
+
         <h3>{this.props.userName}</h3>
         <p>{this.props.text}</p>
+
+        <a href="#" onClick={this.props.onClick} className="small-button delete-item icon-cross"></a>
       </li>
     )
   }
