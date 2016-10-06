@@ -1,0 +1,99 @@
+
+// Reset
+
+*
+  outline none
+
+ul
+  padding 0
+  margin 0
+  list-style none
+
+a
+  &:hover, &:active, &:focus
+    text-decoration none
+
+// End Reset
+
+
+// Main Settings
+
+*
+  outline none
+
+html, body
+  min-height 100%
+
+body
+  background url('../img/noise-pattern-with-subtle-cross-lines.png'), #F0EFED
+  font-family $mf
+
+h1
+  color #222
+  font-family $mf
+  &.title
+    text-transform uppercase
+    margin-top 0
+    margin-bottom 60px
+    color #333
+    font-weight 700
+    letter-spacing 5px
+
+.container
+  padding 40px
+  background #FBFBFB
+  position relative
+  bs_pattern((#FBFBFB / 2))
+
+.icon
+  font-family $if
+
+button
+  border 0
+  background #333
+  color #fff
+  padding 10px 15px
+  transition()
+  bs_pattern((#333 / 2))
+  font-size 16px
+  margin-top 20px
+  &:hover
+    color $mc
+  &:active
+    bs_pattern_negative((#333 / 2))
+
+#addMessage
+  input, textarea
+    background #ccc
+    color #222
+    bs_pattern((#ccc / 2))
+    &::-webkit-input-placeholder
+      color #222
+    &::-moz-placeholder
+      color #222
+    &:-moz-placeholder
+      color #222
+    &:-ms-input-placeholder
+      color #222
+  textarea
+    display block
+    border 0
+    padding 10px 15px
+    resize none
+    height 150px
+    width 300px
+    margin-top 20px
+  input
+    display block
+    border 0
+    padding 10px 15px
+    margin-top 20px
+    
+  
+  
+
+// Root
+
+#root
+  height 100%
+  padding 40px 0

@@ -1,0 +1,28 @@
+
+// Variables
+
+$mf = 'Panton'
+$af = sans-serif, Arial
+$if = 'Icomoon' // Icons font
+$mc = #FF923A // Main Color
+
+
+// Mixins
+
+fonts(fs = 15px, ff = $mf)
+  font-size fs
+  font-family ff, $af
+
+transition(t = .2s)
+  transition t
+
+bs_pattern(color)
+  box-shadow  0 1px 0 color,
+              0 2px 0 color
+
+bs_pattern_negative(color)
+  box-shadow  0 1px 0 color
+
+ts_pattern(color)
+  text-shadow  0 1px 0 color,
+               0 2px 0 color
