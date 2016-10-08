@@ -1,6 +1,5 @@
 
 .message-item
-  color #333
   position relative
   padding 15px
   margin-top: 20px
@@ -22,6 +21,7 @@
     bs_pattern(#fff)
     &:hover
       background $mc
+      color #333
       bs_pattern($mc)
     &:active
       bs_pattern_negative($mc)
@@ -31,33 +31,49 @@
     right 5px
   h3
     margin-top 0
-
+    
+    
+$themeBackgroundColor = #333 // $mbc
+$themeFontColor = #fff // #333
 #addMessage
-  max-width 300px
-  margin-top 40px
+  max-width 405px
+  margin-top 80px
+  position relative
   input, textarea
-    background #ccc
-    color #222
+    background #333
+    color #fff
+    border 1px solid transparent
+    border-bottom 0
     transition()
-    bs_pattern(#ccc)
+    bs_pattern(#333)
     &::-webkit-input-placeholder
-      color #222
+      color $themeFontColor
       fonts(16px)
     &::-moz-placeholder
-      color #222
+      color $themeFontColor
       fonts(16px)
     &:-moz-placeholder
-      color #222
+      color $themeFontColor
       fonts(16px)
     &:-ms-input-placeholder
-      color #222
+      color $themeFontColor
       fonts(16px)
     &:focus
-      background $mc
-      bs_pattern($mc)
+      background $themeBackgroundColor
+      color $themeFontColor
+      //border 1px solid ($themeBackgroundColor / 2)
+      //border-bottom 0
+      bs_pattern($themeBackgroundColor)
+      &::-webkit-input-placeholder
+        color #333
+      &::-moz-placeholder
+        color #333
+      &:-moz-placeholder
+        color #333
+      &:-ms-input-placeholder
+        color #333
   textarea
     display block
-    border 0
     padding 10px 15px
     resize none
     height 150px
@@ -67,8 +83,15 @@
   input
     width 100%
     display block
-    border 0
     padding 10px 15px
     padding-bottom 8px
     margin-top 20px
     fonts(16px)
+  .send
+    position absolute
+    margin-top: 0
+    right 0
+    bottom 0
+    font-family $if
+    padding 5px 10px
+    transition()

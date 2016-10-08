@@ -9,15 +9,9 @@ class Messages extends React.Component {
     super();
 
     this.state = {
-      messageName: '',
+      messageName: 'Vladimir',
       messageText: '',
     }
-  }
-
-  handleName(e) {
-    this.setState({
-      messageName: e.target.value,
-    });
   }
 
   handleMessage(e) {
@@ -27,15 +21,16 @@ class Messages extends React.Component {
   }
 
   handleMessageSubmit() {
-    if (this.state.messageName !== '' && this.state.messageText !== '') {
-      this.props.addMessage(
-        Date.now(),
-        this.state.messageName,
-        this.state.messageText
-      );
+    if (this.state.messageText !== '') {
+      var message = {
+        id: Date.now(),
+        userName: this.state.messageName,
+        text: this.state.messageText,
+      }
+
+      this.props.addMessage(message);
 
       this.setState({
-        messageName: '',
         messageText: '',
       });
     }
@@ -61,16 +56,12 @@ class Messages extends React.Component {
         }
         </ul>
         <div id="addMessage">
-          <input onChange={this.handleName.bind(this)}
-                 type="text"
-                 placeholder="Name"
-                 className="name"
-                 value={this.state.messageName} />
+          <h3>Add message:</h3>
           <textarea onChange={this.handleMessage.bind(this)} className="text"
-                                                             placeholder="Text ..."
+                                                             placeholder="Type your text here..."
                                                              value={this.state.messageText}>
           </textarea>
-          <button onClick={this.handleMessageSubmit.bind(this)}>add new Message</button>
+          <button onClick={this.handleMessageSubmit.bind(this)} className="send icon-arrow-right2"></button>
         </div>
       </div>
     )

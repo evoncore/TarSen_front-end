@@ -8,13 +8,13 @@ function messages(state=[], action) {
     }
 
     case 'ADD_MESSAGE': {
-      return [...state, {id: action.id, userName: action.userName, text: action.text}];
+      return [...state, action.payload];
       break;
     }
 
     case 'REMOVE_MESSAGE': {
       var arr = state.filter(el => {
-        if (action.id != el.id) {
+        if (action.payload.id != el.id) {
           return el;
         }
       });

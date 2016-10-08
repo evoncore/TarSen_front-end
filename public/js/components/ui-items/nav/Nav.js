@@ -72,15 +72,17 @@ class Nav extends React.Component {
 
         <ul>
           <div className="before" ref="borderLeft"></div>
-          <li><Link to="/" className="icon icon-home" activeClassName="active"><i className="link-text">Home</i></Link></li>
+          <li><Link to="/" className="icon icon-home"><i className="link-text">Home</i></Link></li>
 
-          <li><Link to="/messages" className="icon icon-bubbles2" activeClassName="active">
-            <b id="message-counter">{this.props.messages.length > 0 ? this.props.messages.length : ''}</b>
-            <i className="link-text">Messages</i></Link>
+          <li>
+            <Link to="/messages" className="icon icon-bubbles2">
+              <b id="message-counter">{this.props.messages.length > 0 ? this.props.messages.length : ''}</b>
+              <i className="link-text">Messages</i>
+            </Link>
           </li>
 
-          <li><Link to="/users" className="icon icon-users" activeClassName="active"><i className="link-text">Users</i></Link></li>
-          <li><Link to="/settings" className="icon icon-cog" activeClassName="active"><i className="link-text">Settings</i></Link></li>
+          <li><Link to="/users" className="icon icon-users"><i className="link-text">Users</i></Link></li>
+          <li><Link to="/settings" className="icon icon-cog"><i className="link-text">Settings</i></Link></li>
         </ul>
 
       </nav>

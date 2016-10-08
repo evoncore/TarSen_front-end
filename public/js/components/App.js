@@ -1,10 +1,10 @@
-import React from 'react'
-import Nav from './ui-items/nav/Nav'
+import React from 'react';
+import Nav from './ui-items/nav/Nav';
 
 class App extends React.Component {
 
   constructor() {
-    super()
+    super();
   }
 
   render() {
@@ -18,4 +18,4 @@ class App extends React.Component {
 
 }
 
-export default App
+export default App;

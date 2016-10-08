@@ -10,6 +10,7 @@ class Settings extends React.Component {
     return (
       <div>
         <h1 className="title">Settings</h1>
+        <h3>Theme:</h3>
       </div>
     )
   }
