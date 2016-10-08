@@ -31,12 +31,14 @@
     right 5px
   h3
     margin-top 0
+    color $mc
+    margin-bottom: 15px
     
     
 $themeBackgroundColor = #333 // $mbc
 $themeFontColor = #fff // #333
 #addMessage
-  max-width 405px
+  max-width 100%
   margin-top 80px
   position relative
   input, textarea
@@ -76,7 +78,7 @@ $themeFontColor = #fff // #333
     display block
     padding 10px 15px
     resize none
-    height 150px
+    height 44px
     width 100%
     margin-top 20px
     fonts(16px)
@@ -91,7 +93,8 @@ $themeFontColor = #fff // #333
     position absolute
     margin-top: 0
     right 0
-    bottom 0
+    bottom 6px
     font-family $if
     padding 5px 10px
+    box-shadow none
     transition()

@@ -36,6 +36,21 @@ class Messages extends React.Component {
     }
   }
 
+  keyCodeMessage(e) {
+    // if (e.ctrlKey && e.keyCode == 13) {
+      // Ctrl-Enter pressed
+    // }
+
+    switch (e.which) {
+      case 13: {
+        e.preventDefault();
+        this.handleMessageSubmit();
+
+        break;
+      }
+    }
+  }
+
   removeMessage(e) {
     e.preventDefault();
     this.props.removeMessage(e.target.closest('li').dataset.id);
@@ -57,9 +72,10 @@ class Messages extends React.Component {
         </ul>
         <div id="addMessage">
           <h3>Add message:</h3>
-          <textarea onChange={this.handleMessage.bind(this)} className="text"
-                                                             placeholder="Type your text here..."
-                                                             value={this.state.messageText}>
+          <textarea onKeyPress={this.keyCodeMessage.bind(this)} onChange={this.handleMessage.bind(this)}
+                                                className="text"
+                                                placeholder="Type your text here..."
+                                                value={this.state.messageText}>
           </textarea>
           <button onClick={this.handleMessageSubmit.bind(this)} className="send icon-arrow-right2"></button>
         </div>
