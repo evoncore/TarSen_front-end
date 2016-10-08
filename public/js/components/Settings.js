@@ -11,6 +11,7 @@ class Settings extends React.Component {
       <div>
         <h1 className="title">Settings</h1>
         <h3>Theme:</h3>
+        <p>Dark</p>
       </div>
     )
   }

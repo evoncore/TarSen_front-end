@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router';
 import { connect } from 'react-redux';
 import { mapStateToProps, mapDispatchToProps } from '../../../connectToStore';
-// import openNav from './Nav-open';
 
 class Nav extends React.Component {
 
@@ -13,14 +12,10 @@ class Nav extends React.Component {
       isOpen: true,
       styles: {}
     }
-
-    // this.openNav = openNav;
   }
 
   componentWillMount() {
     this.props.fetchMessages();
-    // document.body.addEventListener('contextmenu', this.openNav.bind(this));
-    // document.body.addEventListener('mouseup', this.closeNav.bind(this))
   }
 
   componentDidMount() {
@@ -48,20 +43,10 @@ class Nav extends React.Component {
   }
 
   componentWillUnmount() {
-    // document.body.removeEventListener('contextmenu', this.openNav);
     for (let i = 0; i < this.links.length; i++) {
       this.links[i].removeEventListener('click');
     }
-    // document.body.removeEventListener('mouseup', this.closeNav.bind(this))
   }
-
-  // closeNav(e) {
-  //   if (e.target == e.target.closest('#root')) {
-  //     this.setState({
-  //       isOpen: false
-  //     })
-  //   }
-  // }
 
   render() {
     return (
@@ -72,17 +57,17 @@ class Nav extends React.Component {
 
         <ul>
           <div className="before" ref="borderLeft"></div>
-          <li><Link to="/" className="icon icon-home"><i className="link-text">Home</i></Link></li>
+          <li><Link to="/" className="icon icon-home" activeClassName="active"><i className="link-text">Home</i></Link></li>
 
           <li>
-            <Link to="/messages" className="icon icon-bubbles2">
+            <Link to="/messages" className="icon icon-bubbles2" activeClassName="active">
               <b id="message-counter">{this.props.messages.length > 0 ? this.props.messages.length : ''}</b>
               <i className="link-text">Messages</i>
             </Link>
           </li>
 
-          <li><Link to="/users" className="icon icon-users"><i className="link-text">Users</i></Link></li>
-          <li><Link to="/settings" className="icon icon-cog"><i className="link-text">Settings</i></Link></li>
+          <li><Link to="/users" className="icon icon-users" activeClassName="active"><i className="link-text">Users</i></Link></li>
+          <li><Link to="/settings" className="icon icon-cog" activeClassName="active"><i className="link-text">Settings</i></Link></li>
         </ul>
 
       </nav>
