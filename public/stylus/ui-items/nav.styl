@@ -18,8 +18,8 @@
   ul
     position fixed
     box-shadow: 0 0 3px rgba(0,0,0,.3),
-                0 1px 0 (#333 / 2),
-                0 2px 0 (#333 / 2)
+                0 1px 0 (#333 / 1.5),
+                0 2px 0 (#333 / 1.5)
     & .before
       content ''
       display block
@@ -40,10 +40,10 @@
       padding 15px 18px
       transition()
       position relative
-      &.active
-        color $mc
-        &:before
-          ts_pattern($mc)
+      //&.active
+      //  color $mc
+      //  &:before
+      //    ts_pattern($mc)
       &:before
         font-size 16px
         text-shadow: 0 1px 0 #888, 

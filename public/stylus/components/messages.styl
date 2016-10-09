@@ -9,26 +9,22 @@
   .small-button
     position absolute
     display block
-    width 15px
-    height 15px
-    background #fff
     color #fff
     font-size 10px
     text-align center
-    line-height 16px
     font-family $if
     transition()
-    bs_pattern(#fff)
     &:hover
-      background $mc
-      color #333
-      bs_pattern($mc)
+      color $mc
+      cursor pointer
     &:active
-      bs_pattern_negative($mc)
-    cursor pointer
+      transform: rotate(90deg)
   .delete-item
-    top 5px
-    right 5px
+    top 11px
+    right 11px
+    ts_pattern(#fff)
+    &:hover
+      ts_pattern($mc)
   h3
     margin-top 0
     color $mc
@@ -49,31 +45,21 @@ $themeFontColor = #fff // #333
     transition()
     bs_pattern(#333)
     &::-webkit-input-placeholder
-      color $themeFontColor
+      color ($themeFontColor / 2)
       fonts(16px)
     &::-moz-placeholder
-      color $themeFontColor
+      color ($themeFontColor / 2)
       fonts(16px)
     &:-moz-placeholder
-      color $themeFontColor
+      color ($themeFontColor / 2)
       fonts(16px)
     &:-ms-input-placeholder
-      color $themeFontColor
+      color ($themeFontColor / 2)
       fonts(16px)
     &:focus
       background $themeBackgroundColor
       color $themeFontColor
-      //border 1px solid ($themeBackgroundColor / 2)
-      //border-bottom 0
       bs_pattern($themeBackgroundColor)
-      &::-webkit-input-placeholder
-        color #333
-      &::-moz-placeholder
-        color #333
-      &:-moz-placeholder
-        color #333
-      &:-ms-input-placeholder
-        color #333
   textarea
     display block
     padding 10px 15px
@@ -93,8 +79,14 @@ $themeFontColor = #fff // #333
     position absolute
     margin-top: 0
     right 0
-    bottom 6px
+    bottom 7px
     font-family $if
     padding 5px 10px
+    background transparent
     box-shadow none
     transition()
+    ts_pattern(#fff)
+    &:active
+      right -3px
+    &:hover
+      ts_pattern($mc)

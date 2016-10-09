@@ -24,8 +24,8 @@ class Messages extends React.Component {
     if (this.state.messageText !== '') {
       var message = {
         id: Date.now(),
-        userName: this.state.messageName,
-        text: this.state.messageText,
+        user_name: this.state.messageName,
+        message: this.state.messageText,
       }
 
       this.props.addMessage(message);
@@ -65,8 +65,8 @@ class Messages extends React.Component {
           this.props.messages.map((el) => {
             return <Message onClick={this.removeMessage.bind(this)} key={el.id}
                                                                     id={el.id}
-                                                                    userName={el.userName}
-                                                                    text={el.text} />
+                                                                    user_name={el.user_name}
+                                                                    message={el.message} />
           })
         }
         </ul>

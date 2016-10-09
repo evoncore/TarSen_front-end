@@ -3,7 +3,7 @@ import config from '../config';
 
 // GET ALL
 export function fetchMessages() {
-  var request = axios.post(config.server + '/api/messages');
+  var request = axios.get(config.server + '/api/messages');
 
   return (dispatch) => {
     request
@@ -18,11 +18,7 @@ export function fetchMessages() {
 
 // ADD
 export function addMessage(message) {
-  var payload = {
-    id: message.id,
-    userName: message.userName,
-    text: message.text,
-  };
+  var payload = message;
 
   var request = axios.post(config.server + '/api/messages/add', payload);
 
@@ -40,7 +36,7 @@ export function addMessage(message) {
 // REMOVE
 export function removeMessage(id) {
   var payload = { id: id };
-  var request = axios.post(config.server + '/api/messages/' + payload.id + '/remove');
+  var request = axios.delete(config.server + '/api/messages/' + payload.id + '/remove');
 
   return (dispatch) => {
     request

@@ -3,7 +3,7 @@ function messages(state=[], action) {
   switch(action.type) {
 
     case 'FETCH_MESSAGES': {
-      return JSON.parse(action.payload);
+      return action.payload;
       break;
     }
 
